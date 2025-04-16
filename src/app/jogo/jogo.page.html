@@ -15,6 +15,16 @@
     </ion-select>
   </ion-item>
 
+  <ion-card>
+    <ion-card-content>
+      <strong>Pontuação:</strong><br>
+      👤 Jogador: {{ pontuacaoUsuario }}<br>
+      💻 Computador: {{ pontuacaoComputador }}
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button color="medium" expand="block" (click)="resetarPontuacao()">🔄 Resetar Pontuação</ion-button>
+  
   <ion-button expand="block" (click)="jogar()">Jogar</ion-button>
   <ion-button expand="block" [routerLink]="['/home']">
     Ir para Listagem Geral
