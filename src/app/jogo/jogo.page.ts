@@ -13,9 +13,18 @@ export class JogoPage {
   resultado: string = '';
   mensagemEscolhas: string = '';
 
+  pontuacaoUsuario: number = 0;
+  pontuacaoComputador: number = 0;
+
+  resetarPontuacao() {
+    this.pontuacaoUsuario = 0;
+    this.pontuacaoComputador = 0;
+    this.resultado = '';
+    this.mensagemEscolhas = '';
+  }  
+
   jogar() {
     this.escolhaComputador = Math.floor(Math.random() * 3) + 1;
-
     const escolha = +this.escolhaUsuario;
 
     const opcoes: any = {
@@ -34,9 +43,10 @@ export class JogoPage {
       (escolha === 3 && this.escolhaComputador === 2)    // Tesoura > Papel
     ) {
       this.resultado = '🎉 Você venceu!';
+      this.pontuacaoUsuario++;
     } else {
       this.resultado = '😢 Você perdeu!';
+      this.pontuacaoComputador++;
     }
   }
 }
-
